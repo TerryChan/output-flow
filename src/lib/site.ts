@@ -15,4 +15,5 @@ export const navItems = [
   { href: "/cases", label: "课例" },
   { href: "/practice", label: "落地" },
   { href: "/handbook", label: "讲义" },
+  { href: "/downloads", label: "下载" },
 ] as const;

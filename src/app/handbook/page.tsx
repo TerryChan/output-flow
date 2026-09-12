@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageWidth } from "@/components/page-width";
 import { PrintButton } from "@/components/print-button";
+import { Button } from "@/components/ui/button";
 import { halfDay, packList, takeaways } from "@/lib/agenda";
 import { cases } from "@/lib/cases";
 import { ideaClose, myths, poaSteps } from "@/lib/idea";
@@ -17,8 +18,19 @@ export default function HandbookPage() {
   return (
     <PageWidth className="max-w-3xl">
       <div className="no-print mb-8 flex items-center justify-between gap-3">
-        <p className="text-sm text-muted-foreground">打印本页，即是发给 30 位老师的纸质手册。</p>
-        <PrintButton label="打印讲义" />
+        <p className="text-sm text-muted-foreground">
+          打印本页，或下载已排好的 PDF 直接发给老师。
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            nativeButton={false}
+            render={<a href="/downloads/从听懂到说出-讲座讲义.pdf" download />}
+            variant="outline"
+          >
+            下载讲义 PDF
+          </Button>
+          <PrintButton label="打印本页" />
+        </div>
       </div>
 
       <header className="border-b border-foreground/20 pb-6">

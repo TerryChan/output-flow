@@ -25,6 +25,21 @@ npm run build
 npm start
 ```
 
+## 发给老师的文件
+
+网站「下载」页提供三份 PDF 和一份资料包：
+
+- `public/downloads/从听懂到说出-讲座讲义.pdf`
+- `public/downloads/输出式备课单.pdf`
+- `public/downloads/四则校本课例.pdf`
+- `public/downloads/从听懂到说出-资料包.zip`
+
+重新生成：
+
+```bash
+npm run export:handouts
+```
+
 ## 你怎么用
 
 1. 投影本站，按顶栏顺序讲。

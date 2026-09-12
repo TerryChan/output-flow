@@ -6,7 +6,8 @@
     "dev": "next dev -p 4731 -H 127.0.0.1",
     "build": "next build",
     "start": "next start -p 4731 -H 127.0.0.1",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export:handouts": "npx tsx scripts/export-handouts.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

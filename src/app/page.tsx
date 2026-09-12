@@ -19,6 +19,7 @@ import {
   packList,
   takeaways,
 } from "@/lib/agenda";
+import { handouts } from "@/lib/downloads";
 import { site } from "@/lib/site";
 
 export default function HomePage() {
@@ -49,6 +50,9 @@ export default function HomePage() {
             </Button>
             <Button render={<Link href="/handbook" />} variant="outline" size="lg">
               打印讲义
+            </Button>
+            <Button render={<Link href="/downloads" />} variant="outline" size="lg">
+              下载 PDF
             </Button>
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
@@ -168,6 +172,29 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section>
+          <div className="flex items-end justify-between gap-4">
+            <h2 className="text-2xl">发给老师的文件</h2>
+            <Link href="/downloads" className="text-sm text-seal hover:underline">
+              全部下载
+            </Link>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            {handouts.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                download
+                className="rounded-xl border border-border bg-card px-4 py-3 hover:border-primary/40"
+              >
+                <p className="text-xs tracking-wide text-seal">{item.kind}</p>
+                <p className="font-medium">{item.title}</p>
+                <p className="mt-1 text-sm leading-7 text-muted-foreground">{item.detail}</p>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="grid gap-3 sm:grid-cols-3">
